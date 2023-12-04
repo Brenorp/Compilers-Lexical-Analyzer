@@ -7,13 +7,10 @@ reserved = {
    'float' : 'FLOAT',
    'char' : 'CHAR',
    'boolean' : 'BOOLEAN',
-   'void' : 'VOID',
    'if' : 'IF',
    'else' : 'ELSE',
    'while' : 'WHILE',
-   'scanf' : 'SCANF',
-   'println' : 'PRINTLN',
-   'main' : 'MAIN',
+   
    'return' : 'RETURN',
    'for' : 'FOR',
    'switch' : 'SWITCH',
@@ -49,7 +46,7 @@ tokens = [
     'COLON',
     'NOT',
     'GREATER',
-    'LESS'
+    'LESS',
     
  ] + list(reserved.values())
 
@@ -66,7 +63,6 @@ def t_ID(t):
 # Regular expressions for tokens
 t_NUM_INT = r'\d+'
 t_NUM_DEC = r'\d+\.\d+'
-
 t_PERCENT = r'\%'
 t_AND = r'\&\&'
 t_OR = r'\|\|'
@@ -487,9 +483,9 @@ def p_expr_un_sub(p):
     'expr_un : PLUS PLUS expr_postfix'
     p[0] = p[1]
 
-def p_expr_un_add(p):
+'''def p_expr_un_add(p):
     'expr_un : MINUS MINUS expr_postfix'
-    p[0] = p[1]
+    p[0] = p[1]'''
 
 def p_postfix_primary(p):
     'expr_postfix : primary'
@@ -541,8 +537,9 @@ def p_primary_expr(p):
 
 
 precedence = (
-    ('left', 'atrib'),
+
     ('left', 'primary'),
+    ('left', 'atrib'),
     ('right', 'uminus')
 )
 
