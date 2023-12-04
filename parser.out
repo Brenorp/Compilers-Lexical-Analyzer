@@ -1,13 +1,5 @@
 Created by PLY (http://www.dabeaz.com/ply)
 
-Unused terminals:
-
-    MAIN
-    PRINTLN
-    SCANF
-    SPECIAL
-    VOID
-
 Grammar
 
 Rule 0     S' -> programa
@@ -87,19 +79,18 @@ Rule 73    expr_mul -> expr_mul PERCENT expr_un
 Rule 74    expr_un -> expr_postfix
 Rule 75    expr_un -> MINUS expr_un
 Rule 76    expr_un -> PLUS PLUS expr_postfix
-Rule 77    expr_un -> MINUS MINUS expr_postfix
-Rule 78    expr_postfix -> primary
-Rule 79    expr_postfix -> primary LBRACKET expr RBRACKET
-Rule 80    expr_postfix -> primary LPAREN args RPAREN
-Rule 81    expr_postfix -> primary DOT ID
-Rule 82    expr_postfix -> primary MINUS GREATER ID
-Rule 83    args -> expr
-Rule 84    args -> <empty>
-Rule 85    primary -> ID
-Rule 86    primary -> NUM_INT
-Rule 87    primary -> NUM_DEC
-Rule 88    primary -> TEXTO
-Rule 89    primary -> LPAREN expr RPAREN
+Rule 77    expr_postfix -> primary
+Rule 78    expr_postfix -> primary LBRACKET expr RBRACKET
+Rule 79    expr_postfix -> primary LPAREN args RPAREN
+Rule 80    expr_postfix -> primary DOT ID
+Rule 81    expr_postfix -> primary MINUS GREATER ID
+Rule 82    args -> expr
+Rule 83    args -> <empty>
+Rule 84    primary -> ID
+Rule 85    primary -> NUM_INT
+Rule 86    primary -> NUM_DEC
+Rule 87    primary -> TEXTO
+Rule 88    primary -> LPAREN expr RPAREN
 
 Terminals, with rules where they appear
 
@@ -114,45 +105,40 @@ COMMA                : 15
 CONTINUE             : 47
 DEFAULT              : 45
 DIVIDE               : 25 32 72
-DOT                  : 18 18 18 81
+DOT                  : 18 18 18 80
 ELSE                 : 37
 FLOAT                : 10
 FOR                  : 39
-GREATER              : 61 62 82
-ID                   : 7 8 13 16 18 21 22 23 24 25 26 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 35 49 53 54 81 82 85
+GREATER              : 61 62 81
+ID                   : 7 8 13 16 18 21 22 23 24 25 26 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 35 49 53 54 80 81 84
 IF                   : 36 37
 INT                  : 9
 LBRACE               : 19 49
-LBRACKET             : 53 54 79
+LBRACKET             : 53 54 78
 LESS                 : 63 64
-LPAREN               : 13 36 37 38 39 40 80 89
-MAIN                 : 
-MINUS                : 23 30 69 75 77 77 82
+LPAREN               : 13 36 37 38 39 40 79 88
+MINUS                : 23 30 69 75 81
 NOT                  : 59 65
-NUM_DEC              : 87
-NUM_INT              : 86
+NUM_DEC              : 86
+NUM_INT              : 85
 OR                   : 35 58
 PERCENT              : 26 33 73
 PLUS                 : 22 29 68 76 76
-PRINTLN              : 
 RBRACE               : 19 49
-RBRACKET             : 53 54 79
+RBRACKET             : 53 54 78
 RETURN               : 48
-RPAREN               : 13 36 37 38 39 40 80 89
-SCANF                : 
+RPAREN               : 13 36 37 38 39 40 79 88
 SEMICOLON            : 7 8 39 39 46 47 48 49
-SPECIAL              : 
 STRUCT               : 49
 SWITCH               : 40
-TEXTO                : 88
+TEXTO                : 87
 TIMES                : 24 31 71
-VOID                 : 
 WHILE                : 38
 error                : 
 
 Nonterminals, with rules where they appear
 
-args                 : 80
+args                 : 79
 array                : 17
 atrib                : 20
 bloco                : 13 36 37 37 38 39 44 45
@@ -166,16 +152,16 @@ destr                : 6
 dfunc                : 5
 dvar                 : 4 52
 dvar_star            : 49 52
-expr                 : 8 21 22 23 24 25 26 27 36 37 38 39 39 40 44 48 53 79 83 89
+expr                 : 8 21 22 23 24 25 26 27 36 37 38 39 39 40 44 48 53 78 82 88
 expr_ar              : 60 61 61 62 62 63 63 64 64 65 65 66 66 68 69
 expr_log             : 55 57 58
 expr_mul             : 67 68 69 71 72 73
-expr_postfix         : 74 76 77
+expr_postfix         : 74 76
 expr_rel             : 56 57 58 59
 expr_un              : 70 71 72 73 75
 param                : 14 15
 parametros           : 13 15
-primary              : 78 79 80 81 82
+primary              : 77 78 79 80 81
 programa             : 0
 tipo                 : 7 8 13 16 17 18
 
@@ -487,17 +473,16 @@ state 20
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -578,17 +563,16 @@ state 23
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -650,17 +634,16 @@ state 24
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -722,17 +705,16 @@ state 25
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -794,17 +776,16 @@ state 26
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -913,26 +894,26 @@ state 32
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
-    SEMICOLON       reduce using rule 85 (primary -> ID .)
-    RPAREN          reduce using rule 85 (primary -> ID .)
-    RBRACKET        reduce using rule 85 (primary -> ID .)
-    COLON           reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
+    SEMICOLON       reduce using rule 84 (primary -> ID .)
+    RPAREN          reduce using rule 84 (primary -> ID .)
+    RBRACKET        reduce using rule 84 (primary -> ID .)
+    COLON           reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -954,31 +935,29 @@ state 33
 state 34
 
     (75) expr_un -> MINUS . expr_un
-    (77) expr_un -> MINUS . MINUS expr_postfix
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    MINUS           shift and go to state 66
+    MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_un                        shift and go to state 67
+    expr_un                        shift and go to state 66
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
@@ -1014,27 +993,26 @@ state 36
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_rel                       shift and go to state 69
+    expr_rel                       shift and go to state 68
     expr_ar                        shift and go to state 37
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
@@ -1059,12 +1037,12 @@ state 37
     RPAREN          reduce using rule 60 (expr_rel -> expr_ar .)
     RBRACKET        reduce using rule 60 (expr_rel -> expr_ar .)
     COLON           reduce using rule 60 (expr_rel -> expr_ar .)
-    GREATER         shift and go to state 70
-    LESS            shift and go to state 72
-    NOT             shift and go to state 73
-    ATRIB           shift and go to state 71
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    GREATER         shift and go to state 69
+    LESS            shift and go to state 71
+    NOT             shift and go to state 72
+    ATRIB           shift and go to state 70
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
 
 
 state 38
@@ -1086,9 +1064,9 @@ state 38
     RPAREN          reduce using rule 67 (expr_ar -> expr_mul .)
     RBRACKET        reduce using rule 67 (expr_ar -> expr_mul .)
     COLON           reduce using rule 67 (expr_ar -> expr_mul .)
-    TIMES           shift and go to state 76
-    DIVIDE          shift and go to state 77
-    PERCENT         shift and go to state 78
+    TIMES           shift and go to state 75
+    DIVIDE          shift and go to state 76
+    PERCENT         shift and go to state 77
 
 
 state 39
@@ -1135,38 +1113,38 @@ state 40
 
 state 41
 
-    (78) expr_postfix -> primary .
-    (79) expr_postfix -> primary . LBRACKET expr RBRACKET
-    (80) expr_postfix -> primary . LPAREN args RPAREN
-    (81) expr_postfix -> primary . DOT ID
-    (82) expr_postfix -> primary . MINUS GREATER ID
+    (77) expr_postfix -> primary .
+    (78) expr_postfix -> primary . LBRACKET expr RBRACKET
+    (79) expr_postfix -> primary . LPAREN args RPAREN
+    (80) expr_postfix -> primary . DOT ID
+    (81) expr_postfix -> primary . MINUS GREATER ID
 
   ! shift/reduce conflict for MINUS resolved as shift
-    TIMES           reduce using rule 78 (expr_postfix -> primary .)
-    DIVIDE          reduce using rule 78 (expr_postfix -> primary .)
-    PERCENT         reduce using rule 78 (expr_postfix -> primary .)
-    GREATER         reduce using rule 78 (expr_postfix -> primary .)
-    LESS            reduce using rule 78 (expr_postfix -> primary .)
-    NOT             reduce using rule 78 (expr_postfix -> primary .)
-    ATRIB           reduce using rule 78 (expr_postfix -> primary .)
-    PLUS            reduce using rule 78 (expr_postfix -> primary .)
-    AND             reduce using rule 78 (expr_postfix -> primary .)
-    OR              reduce using rule 78 (expr_postfix -> primary .)
-    SEMICOLON       reduce using rule 78 (expr_postfix -> primary .)
-    RPAREN          reduce using rule 78 (expr_postfix -> primary .)
-    RBRACKET        reduce using rule 78 (expr_postfix -> primary .)
-    COLON           reduce using rule 78 (expr_postfix -> primary .)
-    LBRACKET        shift and go to state 79
-    LPAREN          shift and go to state 80
-    DOT             shift and go to state 81
-    MINUS           shift and go to state 82
+    TIMES           reduce using rule 77 (expr_postfix -> primary .)
+    DIVIDE          reduce using rule 77 (expr_postfix -> primary .)
+    PERCENT         reduce using rule 77 (expr_postfix -> primary .)
+    GREATER         reduce using rule 77 (expr_postfix -> primary .)
+    LESS            reduce using rule 77 (expr_postfix -> primary .)
+    NOT             reduce using rule 77 (expr_postfix -> primary .)
+    ATRIB           reduce using rule 77 (expr_postfix -> primary .)
+    PLUS            reduce using rule 77 (expr_postfix -> primary .)
+    AND             reduce using rule 77 (expr_postfix -> primary .)
+    OR              reduce using rule 77 (expr_postfix -> primary .)
+    SEMICOLON       reduce using rule 77 (expr_postfix -> primary .)
+    RPAREN          reduce using rule 77 (expr_postfix -> primary .)
+    RBRACKET        reduce using rule 77 (expr_postfix -> primary .)
+    COLON           reduce using rule 77 (expr_postfix -> primary .)
+    LBRACKET        shift and go to state 78
+    LPAREN          shift and go to state 79
+    DOT             shift and go to state 80
+    MINUS           shift and go to state 81
 
-  ! MINUS           [ reduce using rule 78 (expr_postfix -> primary .) ]
+  ! MINUS           [ reduce using rule 77 (expr_postfix -> primary .) ]
 
 
 state 42
 
-    (89) primary -> LPAREN . expr RPAREN
+    (88) primary -> LPAREN . expr RPAREN
     (20) expr -> . atrib
     (55) expr -> . expr_log
     (21) atrib -> . ID ATRIB expr
@@ -1205,17 +1183,16 @@ state 42
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -1226,7 +1203,7 @@ state 42
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 83
+    expr                           shift and go to state 82
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -1238,74 +1215,74 @@ state 42
 
 state 43
 
-    (86) primary -> NUM_INT .
+    (85) primary -> NUM_INT .
 
-    LBRACKET        reduce using rule 86 (primary -> NUM_INT .)
-    LPAREN          reduce using rule 86 (primary -> NUM_INT .)
-    DOT             reduce using rule 86 (primary -> NUM_INT .)
-    MINUS           reduce using rule 86 (primary -> NUM_INT .)
-    TIMES           reduce using rule 86 (primary -> NUM_INT .)
-    DIVIDE          reduce using rule 86 (primary -> NUM_INT .)
-    PERCENT         reduce using rule 86 (primary -> NUM_INT .)
-    GREATER         reduce using rule 86 (primary -> NUM_INT .)
-    LESS            reduce using rule 86 (primary -> NUM_INT .)
-    NOT             reduce using rule 86 (primary -> NUM_INT .)
-    ATRIB           reduce using rule 86 (primary -> NUM_INT .)
-    PLUS            reduce using rule 86 (primary -> NUM_INT .)
-    AND             reduce using rule 86 (primary -> NUM_INT .)
-    OR              reduce using rule 86 (primary -> NUM_INT .)
-    SEMICOLON       reduce using rule 86 (primary -> NUM_INT .)
-    RPAREN          reduce using rule 86 (primary -> NUM_INT .)
-    RBRACKET        reduce using rule 86 (primary -> NUM_INT .)
-    COLON           reduce using rule 86 (primary -> NUM_INT .)
+    LBRACKET        reduce using rule 85 (primary -> NUM_INT .)
+    LPAREN          reduce using rule 85 (primary -> NUM_INT .)
+    DOT             reduce using rule 85 (primary -> NUM_INT .)
+    MINUS           reduce using rule 85 (primary -> NUM_INT .)
+    TIMES           reduce using rule 85 (primary -> NUM_INT .)
+    DIVIDE          reduce using rule 85 (primary -> NUM_INT .)
+    PERCENT         reduce using rule 85 (primary -> NUM_INT .)
+    GREATER         reduce using rule 85 (primary -> NUM_INT .)
+    LESS            reduce using rule 85 (primary -> NUM_INT .)
+    NOT             reduce using rule 85 (primary -> NUM_INT .)
+    ATRIB           reduce using rule 85 (primary -> NUM_INT .)
+    PLUS            reduce using rule 85 (primary -> NUM_INT .)
+    AND             reduce using rule 85 (primary -> NUM_INT .)
+    OR              reduce using rule 85 (primary -> NUM_INT .)
+    SEMICOLON       reduce using rule 85 (primary -> NUM_INT .)
+    RPAREN          reduce using rule 85 (primary -> NUM_INT .)
+    RBRACKET        reduce using rule 85 (primary -> NUM_INT .)
+    COLON           reduce using rule 85 (primary -> NUM_INT .)
 
 
 state 44
 
-    (87) primary -> NUM_DEC .
+    (86) primary -> NUM_DEC .
 
-    LBRACKET        reduce using rule 87 (primary -> NUM_DEC .)
-    LPAREN          reduce using rule 87 (primary -> NUM_DEC .)
-    DOT             reduce using rule 87 (primary -> NUM_DEC .)
-    MINUS           reduce using rule 87 (primary -> NUM_DEC .)
-    TIMES           reduce using rule 87 (primary -> NUM_DEC .)
-    DIVIDE          reduce using rule 87 (primary -> NUM_DEC .)
-    PERCENT         reduce using rule 87 (primary -> NUM_DEC .)
-    GREATER         reduce using rule 87 (primary -> NUM_DEC .)
-    LESS            reduce using rule 87 (primary -> NUM_DEC .)
-    NOT             reduce using rule 87 (primary -> NUM_DEC .)
-    ATRIB           reduce using rule 87 (primary -> NUM_DEC .)
-    PLUS            reduce using rule 87 (primary -> NUM_DEC .)
-    AND             reduce using rule 87 (primary -> NUM_DEC .)
-    OR              reduce using rule 87 (primary -> NUM_DEC .)
-    SEMICOLON       reduce using rule 87 (primary -> NUM_DEC .)
-    RPAREN          reduce using rule 87 (primary -> NUM_DEC .)
-    RBRACKET        reduce using rule 87 (primary -> NUM_DEC .)
-    COLON           reduce using rule 87 (primary -> NUM_DEC .)
+    LBRACKET        reduce using rule 86 (primary -> NUM_DEC .)
+    LPAREN          reduce using rule 86 (primary -> NUM_DEC .)
+    DOT             reduce using rule 86 (primary -> NUM_DEC .)
+    MINUS           reduce using rule 86 (primary -> NUM_DEC .)
+    TIMES           reduce using rule 86 (primary -> NUM_DEC .)
+    DIVIDE          reduce using rule 86 (primary -> NUM_DEC .)
+    PERCENT         reduce using rule 86 (primary -> NUM_DEC .)
+    GREATER         reduce using rule 86 (primary -> NUM_DEC .)
+    LESS            reduce using rule 86 (primary -> NUM_DEC .)
+    NOT             reduce using rule 86 (primary -> NUM_DEC .)
+    ATRIB           reduce using rule 86 (primary -> NUM_DEC .)
+    PLUS            reduce using rule 86 (primary -> NUM_DEC .)
+    AND             reduce using rule 86 (primary -> NUM_DEC .)
+    OR              reduce using rule 86 (primary -> NUM_DEC .)
+    SEMICOLON       reduce using rule 86 (primary -> NUM_DEC .)
+    RPAREN          reduce using rule 86 (primary -> NUM_DEC .)
+    RBRACKET        reduce using rule 86 (primary -> NUM_DEC .)
+    COLON           reduce using rule 86 (primary -> NUM_DEC .)
 
 
 state 45
 
-    (88) primary -> TEXTO .
+    (87) primary -> TEXTO .
 
-    LBRACKET        reduce using rule 88 (primary -> TEXTO .)
-    LPAREN          reduce using rule 88 (primary -> TEXTO .)
-    DOT             reduce using rule 88 (primary -> TEXTO .)
-    MINUS           reduce using rule 88 (primary -> TEXTO .)
-    TIMES           reduce using rule 88 (primary -> TEXTO .)
-    DIVIDE          reduce using rule 88 (primary -> TEXTO .)
-    PERCENT         reduce using rule 88 (primary -> TEXTO .)
-    GREATER         reduce using rule 88 (primary -> TEXTO .)
-    LESS            reduce using rule 88 (primary -> TEXTO .)
-    NOT             reduce using rule 88 (primary -> TEXTO .)
-    ATRIB           reduce using rule 88 (primary -> TEXTO .)
-    PLUS            reduce using rule 88 (primary -> TEXTO .)
-    AND             reduce using rule 88 (primary -> TEXTO .)
-    OR              reduce using rule 88 (primary -> TEXTO .)
-    SEMICOLON       reduce using rule 88 (primary -> TEXTO .)
-    RPAREN          reduce using rule 88 (primary -> TEXTO .)
-    RBRACKET        reduce using rule 88 (primary -> TEXTO .)
-    COLON           reduce using rule 88 (primary -> TEXTO .)
+    LBRACKET        reduce using rule 87 (primary -> TEXTO .)
+    LPAREN          reduce using rule 87 (primary -> TEXTO .)
+    DOT             reduce using rule 87 (primary -> TEXTO .)
+    MINUS           reduce using rule 87 (primary -> TEXTO .)
+    TIMES           reduce using rule 87 (primary -> TEXTO .)
+    DIVIDE          reduce using rule 87 (primary -> TEXTO .)
+    PERCENT         reduce using rule 87 (primary -> TEXTO .)
+    GREATER         reduce using rule 87 (primary -> TEXTO .)
+    LESS            reduce using rule 87 (primary -> TEXTO .)
+    NOT             reduce using rule 87 (primary -> TEXTO .)
+    ATRIB           reduce using rule 87 (primary -> TEXTO .)
+    PLUS            reduce using rule 87 (primary -> TEXTO .)
+    AND             reduce using rule 87 (primary -> TEXTO .)
+    OR              reduce using rule 87 (primary -> TEXTO .)
+    SEMICOLON       reduce using rule 87 (primary -> TEXTO .)
+    RPAREN          reduce using rule 87 (primary -> TEXTO .)
+    RBRACKET        reduce using rule 87 (primary -> TEXTO .)
+    COLON           reduce using rule 87 (primary -> TEXTO .)
 
 
 state 46
@@ -1369,17 +1346,16 @@ state 47
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -1390,7 +1366,7 @@ state 47
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 84
+    expr                           shift and go to state 83
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -1418,9 +1394,9 @@ state 48
     CHAR            shift and go to state 12
     BOOLEAN         shift and go to state 13
 
-    tipo                           shift and go to state 85
-    parametros                     shift and go to state 86
-    param                          shift and go to state 87
+    tipo                           shift and go to state 84
+    parametros                     shift and go to state 85
+    param                          shift and go to state 86
 
 state 49
 
@@ -1434,35 +1410,35 @@ state 49
     CHAR            reduce using rule 51 (dvar_star -> .)
     BOOLEAN         reduce using rule 51 (dvar_star -> .)
 
-    dvar_star                      shift and go to state 88
+    dvar_star                      shift and go to state 87
 
 state 50
 
     (36) control -> IF LPAREN expr . RPAREN bloco
     (37) control -> IF LPAREN expr . RPAREN bloco ELSE bloco
 
-    RPAREN          shift and go to state 89
+    RPAREN          shift and go to state 88
 
 
 state 51
 
     (38) control -> WHILE LPAREN expr . RPAREN bloco
 
-    RPAREN          shift and go to state 90
+    RPAREN          shift and go to state 89
 
 
 state 52
 
     (39) control -> FOR LPAREN expr . SEMICOLON expr SEMICOLON RPAREN bloco
 
-    SEMICOLON       shift and go to state 91
+    SEMICOLON       shift and go to state 90
 
 
 state 53
 
     (40) control -> SWITCH LPAREN expr . RPAREN caselista
 
-    RPAREN          shift and go to state 92
+    RPAREN          shift and go to state 91
 
 
 state 54
@@ -1505,27 +1481,26 @@ state 55
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_rel                       shift and go to state 93
+    expr_rel                       shift and go to state 92
     expr_ar                        shift and go to state 37
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
@@ -1552,27 +1527,26 @@ state 56
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_rel                       shift and go to state 94
+    expr_rel                       shift and go to state 93
     expr_ar                        shift and go to state 37
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
@@ -1621,19 +1595,18 @@ state 57
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 95
+    ID              shift and go to state 94
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -1642,7 +1615,7 @@ state 57
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 96
+    expr                           shift and go to state 95
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -1657,7 +1630,7 @@ state 58
     (22) atrib -> ID PLUS . ATRIB expr
     (29) atrib -> ID PLUS . ATRIB ID
 
-    ATRIB           shift and go to state 97
+    ATRIB           shift and go to state 96
 
 
 state 59
@@ -1665,7 +1638,7 @@ state 59
     (23) atrib -> ID MINUS . ATRIB expr
     (30) atrib -> ID MINUS . ATRIB ID
 
-    ATRIB           shift and go to state 98
+    ATRIB           shift and go to state 97
 
 
 state 60
@@ -1673,7 +1646,7 @@ state 60
     (24) atrib -> ID TIMES . ATRIB expr
     (31) atrib -> ID TIMES . ATRIB ID
 
-    ATRIB           shift and go to state 99
+    ATRIB           shift and go to state 98
 
 
 state 61
@@ -1681,7 +1654,7 @@ state 61
     (25) atrib -> ID DIVIDE . ATRIB expr
     (32) atrib -> ID DIVIDE . ATRIB ID
 
-    ATRIB           shift and go to state 100
+    ATRIB           shift and go to state 99
 
 
 state 62
@@ -1689,7 +1662,7 @@ state 62
     (26) atrib -> ID PERCENT . ATRIB expr
     (33) atrib -> ID PERCENT . ATRIB ID
 
-    ATRIB           shift and go to state 101
+    ATRIB           shift and go to state 100
 
 
 state 63
@@ -1697,72 +1670,40 @@ state 63
     (27) atrib -> ID AND . ATRIB expr
     (34) atrib -> ID AND . ATRIB ID
 
-    ATRIB           shift and go to state 102
+    ATRIB           shift and go to state 101
 
 
 state 64
 
     (35) atrib -> ID OR . ATRIB ID
 
-    ATRIB           shift and go to state 103
+    ATRIB           shift and go to state 102
 
 
 state 65
 
     (76) expr_un -> PLUS PLUS . expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_postfix                   shift and go to state 104
+    expr_postfix                   shift and go to state 103
     primary                        shift and go to state 41
 
 state 66
-
-    (77) expr_un -> MINUS MINUS . expr_postfix
-    (75) expr_un -> MINUS . expr_un
-    (77) expr_un -> MINUS . MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (74) expr_un -> . expr_postfix
-    (75) expr_un -> . MINUS expr_un
-    (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
-
-    MINUS           shift and go to state 66
-    PLUS            shift and go to state 33
-    ID              shift and go to state 68
-    NUM_INT         shift and go to state 43
-    NUM_DEC         shift and go to state 44
-    TEXTO           shift and go to state 45
-    LPAREN          shift and go to state 42
-
-    expr_postfix                   shift and go to state 105
-    expr_un                        shift and go to state 67
-    primary                        shift and go to state 41
-
-state 67
 
     (75) expr_un -> MINUS expr_un .
 
@@ -1783,31 +1724,31 @@ state 67
     COLON           reduce using rule 75 (expr_un -> MINUS expr_un .)
 
 
+state 67
+
+    (84) primary -> ID .
+
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
+    SEMICOLON       reduce using rule 84 (primary -> ID .)
+    RPAREN          reduce using rule 84 (primary -> ID .)
+    RBRACKET        reduce using rule 84 (primary -> ID .)
+    COLON           reduce using rule 84 (primary -> ID .)
+
+
 state 68
-
-    (85) primary -> ID .
-
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
-    SEMICOLON       reduce using rule 85 (primary -> ID .)
-    RPAREN          reduce using rule 85 (primary -> ID .)
-    RBRACKET        reduce using rule 85 (primary -> ID .)
-    COLON           reduce using rule 85 (primary -> ID .)
-
-
-state 69
 
     (59) expr_log -> NOT expr_rel .
 
@@ -1819,7 +1760,7 @@ state 69
     COLON           reduce using rule 59 (expr_log -> NOT expr_rel .)
 
 
-state 70
+state 69
 
     (61) expr_rel -> expr_ar GREATER . expr_ar
     (62) expr_rel -> expr_ar GREATER . ATRIB expr_ar
@@ -1833,41 +1774,40 @@ state 70
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ATRIB           shift and go to state 107
+    ATRIB           shift and go to state 105
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_ar                        shift and go to state 106
+    expr_ar                        shift and go to state 104
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 71
+state 70
 
     (66) expr_rel -> expr_ar ATRIB . ATRIB expr_ar
 
-    ATRIB           shift and go to state 108
+    ATRIB           shift and go to state 106
 
 
-state 72
+state 71
 
     (63) expr_rel -> expr_ar LESS . expr_ar
     (64) expr_rel -> expr_ar LESS . ATRIB expr_ar
@@ -1881,41 +1821,40 @@ state 72
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ATRIB           shift and go to state 110
+    ATRIB           shift and go to state 108
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_ar                        shift and go to state 109
+    expr_ar                        shift and go to state 107
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 73
+state 72
 
     (65) expr_rel -> expr_ar NOT . ATRIB expr_ar
 
-    ATRIB           shift and go to state 111
+    ATRIB           shift and go to state 109
 
 
-state 74
+state 73
 
     (68) expr_ar -> expr_ar PLUS . expr_mul
     (70) expr_mul -> . expr_un
@@ -1925,32 +1864,31 @@ state 74
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_mul                       shift and go to state 112
+    expr_mul                       shift and go to state 110
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 75
+state 74
 
     (69) expr_ar -> expr_ar MINUS . expr_mul
     (70) expr_mul -> . expr_un
@@ -1960,52 +1898,108 @@ state 75
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_mul                       shift and go to state 113
+    expr_mul                       shift and go to state 111
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 76
+state 75
 
     (71) expr_mul -> expr_mul TIMES . expr_un
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
+    NUM_INT         shift and go to state 43
+    NUM_DEC         shift and go to state 44
+    TEXTO           shift and go to state 45
+    LPAREN          shift and go to state 42
+
+    expr_un                        shift and go to state 112
+    expr_postfix                   shift and go to state 40
+    primary                        shift and go to state 41
+
+state 76
+
+    (72) expr_mul -> expr_mul DIVIDE . expr_un
+    (74) expr_un -> . expr_postfix
+    (75) expr_un -> . MINUS expr_un
+    (76) expr_un -> . PLUS PLUS expr_postfix
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
+
+    MINUS           shift and go to state 34
+    PLUS            shift and go to state 33
+    ID              shift and go to state 67
+    NUM_INT         shift and go to state 43
+    NUM_DEC         shift and go to state 44
+    TEXTO           shift and go to state 45
+    LPAREN          shift and go to state 42
+
+    expr_un                        shift and go to state 113
+    expr_postfix                   shift and go to state 40
+    primary                        shift and go to state 41
+
+state 77
+
+    (73) expr_mul -> expr_mul PERCENT . expr_un
+    (74) expr_un -> . expr_postfix
+    (75) expr_un -> . MINUS expr_un
+    (76) expr_un -> . PLUS PLUS expr_postfix
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
+
+    MINUS           shift and go to state 34
+    PLUS            shift and go to state 33
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
@@ -2015,69 +2009,9 @@ state 76
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 77
-
-    (72) expr_mul -> expr_mul DIVIDE . expr_un
-    (74) expr_un -> . expr_postfix
-    (75) expr_un -> . MINUS expr_un
-    (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
-
-    MINUS           shift and go to state 34
-    PLUS            shift and go to state 33
-    ID              shift and go to state 68
-    NUM_INT         shift and go to state 43
-    NUM_DEC         shift and go to state 44
-    TEXTO           shift and go to state 45
-    LPAREN          shift and go to state 42
-
-    expr_un                        shift and go to state 115
-    expr_postfix                   shift and go to state 40
-    primary                        shift and go to state 41
-
 state 78
 
-    (73) expr_mul -> expr_mul PERCENT . expr_un
-    (74) expr_un -> . expr_postfix
-    (75) expr_un -> . MINUS expr_un
-    (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
-
-    MINUS           shift and go to state 34
-    PLUS            shift and go to state 33
-    ID              shift and go to state 68
-    NUM_INT         shift and go to state 43
-    NUM_DEC         shift and go to state 44
-    TEXTO           shift and go to state 45
-    LPAREN          shift and go to state 42
-
-    expr_un                        shift and go to state 116
-    expr_postfix                   shift and go to state 40
-    primary                        shift and go to state 41
-
-state 79
-
-    (79) expr_postfix -> primary LBRACKET . expr RBRACKET
+    (78) expr_postfix -> primary LBRACKET . expr RBRACKET
     (20) expr -> . atrib
     (55) expr -> . expr_log
     (21) atrib -> . ID ATRIB expr
@@ -2116,17 +2050,16 @@ state 79
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -2138,6 +2071,81 @@ state 79
     LPAREN          shift and go to state 42
 
     primary                        shift and go to state 41
+    expr                           shift and go to state 115
+    atrib                          shift and go to state 30
+    expr_log                       shift and go to state 31
+    expr_rel                       shift and go to state 35
+    expr_ar                        shift and go to state 37
+    expr_mul                       shift and go to state 38
+    expr_un                        shift and go to state 39
+    expr_postfix                   shift and go to state 40
+
+state 79
+
+    (79) expr_postfix -> primary LPAREN . args RPAREN
+    (82) args -> . expr
+    (83) args -> .
+    (20) expr -> . atrib
+    (55) expr -> . expr_log
+    (21) atrib -> . ID ATRIB expr
+    (22) atrib -> . ID PLUS ATRIB expr
+    (23) atrib -> . ID MINUS ATRIB expr
+    (24) atrib -> . ID TIMES ATRIB expr
+    (25) atrib -> . ID DIVIDE ATRIB expr
+    (26) atrib -> . ID PERCENT ATRIB expr
+    (27) atrib -> . ID AND ATRIB expr
+    (28) atrib -> . ID ATRIB ID
+    (29) atrib -> . ID PLUS ATRIB ID
+    (30) atrib -> . ID MINUS ATRIB ID
+    (31) atrib -> . ID TIMES ATRIB ID
+    (32) atrib -> . ID DIVIDE ATRIB ID
+    (33) atrib -> . ID PERCENT ATRIB ID
+    (34) atrib -> . ID AND ATRIB ID
+    (35) atrib -> . ID OR ATRIB ID
+    (56) expr_log -> . expr_rel
+    (57) expr_log -> . expr_log AND expr_rel
+    (58) expr_log -> . expr_log OR expr_rel
+    (59) expr_log -> . NOT expr_rel
+    (60) expr_rel -> . expr_ar
+    (61) expr_rel -> . expr_ar GREATER expr_ar
+    (62) expr_rel -> . expr_ar GREATER ATRIB expr_ar
+    (63) expr_rel -> . expr_ar LESS expr_ar
+    (64) expr_rel -> . expr_ar LESS ATRIB expr_ar
+    (65) expr_rel -> . expr_ar NOT ATRIB expr_ar
+    (66) expr_rel -> . expr_ar ATRIB ATRIB expr_ar
+    (67) expr_ar -> . expr_mul
+    (68) expr_ar -> . expr_ar PLUS expr_mul
+    (69) expr_ar -> . expr_ar MINUS expr_mul
+    (70) expr_mul -> . expr_un
+    (71) expr_mul -> . expr_mul TIMES expr_un
+    (72) expr_mul -> . expr_mul DIVIDE expr_un
+    (73) expr_mul -> . expr_mul PERCENT expr_un
+    (74) expr_un -> . expr_postfix
+    (75) expr_un -> . MINUS expr_un
+    (76) expr_un -> . PLUS PLUS expr_postfix
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
+
+    RPAREN          reduce using rule 83 (args -> .)
+    ID              shift and go to state 32
+    NOT             shift and go to state 36
+    MINUS           shift and go to state 34
+    PLUS            shift and go to state 33
+    NUM_INT         shift and go to state 43
+    NUM_DEC         shift and go to state 44
+    TEXTO           shift and go to state 45
+    LPAREN          shift and go to state 42
+
+    primary                        shift and go to state 41
+    args                           shift and go to state 116
     expr                           shift and go to state 117
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
@@ -2149,109 +2157,33 @@ state 79
 
 state 80
 
-    (80) expr_postfix -> primary LPAREN . args RPAREN
-    (83) args -> . expr
-    (84) args -> .
-    (20) expr -> . atrib
-    (55) expr -> . expr_log
-    (21) atrib -> . ID ATRIB expr
-    (22) atrib -> . ID PLUS ATRIB expr
-    (23) atrib -> . ID MINUS ATRIB expr
-    (24) atrib -> . ID TIMES ATRIB expr
-    (25) atrib -> . ID DIVIDE ATRIB expr
-    (26) atrib -> . ID PERCENT ATRIB expr
-    (27) atrib -> . ID AND ATRIB expr
-    (28) atrib -> . ID ATRIB ID
-    (29) atrib -> . ID PLUS ATRIB ID
-    (30) atrib -> . ID MINUS ATRIB ID
-    (31) atrib -> . ID TIMES ATRIB ID
-    (32) atrib -> . ID DIVIDE ATRIB ID
-    (33) atrib -> . ID PERCENT ATRIB ID
-    (34) atrib -> . ID AND ATRIB ID
-    (35) atrib -> . ID OR ATRIB ID
-    (56) expr_log -> . expr_rel
-    (57) expr_log -> . expr_log AND expr_rel
-    (58) expr_log -> . expr_log OR expr_rel
-    (59) expr_log -> . NOT expr_rel
-    (60) expr_rel -> . expr_ar
-    (61) expr_rel -> . expr_ar GREATER expr_ar
-    (62) expr_rel -> . expr_ar GREATER ATRIB expr_ar
-    (63) expr_rel -> . expr_ar LESS expr_ar
-    (64) expr_rel -> . expr_ar LESS ATRIB expr_ar
-    (65) expr_rel -> . expr_ar NOT ATRIB expr_ar
-    (66) expr_rel -> . expr_ar ATRIB ATRIB expr_ar
-    (67) expr_ar -> . expr_mul
-    (68) expr_ar -> . expr_ar PLUS expr_mul
-    (69) expr_ar -> . expr_ar MINUS expr_mul
-    (70) expr_mul -> . expr_un
-    (71) expr_mul -> . expr_mul TIMES expr_un
-    (72) expr_mul -> . expr_mul DIVIDE expr_un
-    (73) expr_mul -> . expr_mul PERCENT expr_un
-    (74) expr_un -> . expr_postfix
-    (75) expr_un -> . MINUS expr_un
-    (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (80) expr_postfix -> primary DOT . ID
 
-    RPAREN          reduce using rule 84 (args -> .)
-    ID              shift and go to state 32
-    NOT             shift and go to state 36
-    MINUS           shift and go to state 34
-    PLUS            shift and go to state 33
-    NUM_INT         shift and go to state 43
-    NUM_DEC         shift and go to state 44
-    TEXTO           shift and go to state 45
-    LPAREN          shift and go to state 42
+    ID              shift and go to state 118
 
-    primary                        shift and go to state 41
-    args                           shift and go to state 118
-    expr                           shift and go to state 119
-    atrib                          shift and go to state 30
-    expr_log                       shift and go to state 31
-    expr_rel                       shift and go to state 35
-    expr_ar                        shift and go to state 37
-    expr_mul                       shift and go to state 38
-    expr_un                        shift and go to state 39
-    expr_postfix                   shift and go to state 40
 
 state 81
 
-    (81) expr_postfix -> primary DOT . ID
+    (81) expr_postfix -> primary MINUS . GREATER ID
 
-    ID              shift and go to state 120
+    GREATER         shift and go to state 119
 
 
 state 82
 
-    (82) expr_postfix -> primary MINUS . GREATER ID
+    (88) primary -> LPAREN expr . RPAREN
 
-    GREATER         shift and go to state 121
+    RPAREN          shift and go to state 120
 
 
 state 83
 
-    (89) primary -> LPAREN expr . RPAREN
+    (8) dvar -> tipo ID ATRIB expr . SEMICOLON
 
-    RPAREN          shift and go to state 122
+    SEMICOLON       shift and go to state 121
 
 
 state 84
-
-    (8) dvar -> tipo ID ATRIB expr . SEMICOLON
-
-    SEMICOLON       shift and go to state 123
-
-
-state 85
 
     (16) param -> tipo . ID
     (17) param -> tipo . array
@@ -2259,28 +2191,28 @@ state 85
     (53) array -> . ID LBRACKET expr RBRACKET
     (54) array -> . ID LBRACKET RBRACKET
 
-    ID              shift and go to state 124
-    DOT             shift and go to state 126
+    ID              shift and go to state 122
+    DOT             shift and go to state 124
 
-    array                          shift and go to state 125
+    array                          shift and go to state 123
 
-state 86
+state 85
 
     (13) dfunc -> tipo ID LPAREN parametros . RPAREN bloco
 
-    RPAREN          shift and go to state 127
+    RPAREN          shift and go to state 125
 
 
-state 87
+state 86
 
     (14) parametros -> param .
     (15) parametros -> param . COMMA parametros
 
     RPAREN          reduce using rule 14 (parametros -> param .)
-    COMMA           shift and go to state 128
+    COMMA           shift and go to state 126
 
 
-state 88
+state 87
 
     (49) destr -> STRUCT ID LBRACE dvar_star . RBRACE SEMICOLON
     (52) dvar_star -> dvar_star . dvar
@@ -2291,35 +2223,35 @@ state 88
     (11) tipo -> . CHAR
     (12) tipo -> . BOOLEAN
 
-    RBRACE          shift and go to state 129
+    RBRACE          shift and go to state 127
     INT             shift and go to state 10
     FLOAT           shift and go to state 11
     CHAR            shift and go to state 12
     BOOLEAN         shift and go to state 13
 
-    dvar                           shift and go to state 130
-    tipo                           shift and go to state 131
+    dvar                           shift and go to state 128
+    tipo                           shift and go to state 129
 
-state 89
+state 88
 
     (36) control -> IF LPAREN expr RPAREN . bloco
     (37) control -> IF LPAREN expr RPAREN . bloco ELSE bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 132
+    bloco                          shift and go to state 130
 
-state 90
+state 89
 
     (38) control -> WHILE LPAREN expr RPAREN . bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 134
+    bloco                          shift and go to state 132
 
-state 91
+state 90
 
     (39) control -> FOR LPAREN expr SEMICOLON . expr SEMICOLON RPAREN bloco
     (20) expr -> . atrib
@@ -2360,17 +2292,16 @@ state 91
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -2381,7 +2312,7 @@ state 91
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 135
+    expr                           shift and go to state 133
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2391,7 +2322,7 @@ state 91
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 92
+state 91
 
     (40) control -> SWITCH LPAREN expr RPAREN . caselista
     (41) caselista -> . casedec_star
@@ -2415,10 +2346,10 @@ state 92
     $end            reduce using rule 42 (casedec_star -> .)
     RBRACE          reduce using rule 42 (casedec_star -> .)
 
-    caselista                      shift and go to state 136
-    casedec_star                   shift and go to state 137
+    caselista                      shift and go to state 134
+    casedec_star                   shift and go to state 135
 
-state 93
+state 92
 
     (57) expr_log -> expr_log AND expr_rel .
 
@@ -2430,7 +2361,7 @@ state 93
     COLON           reduce using rule 57 (expr_log -> expr_log AND expr_rel .)
 
 
-state 94
+state 93
 
     (58) expr_log -> expr_log OR expr_rel .
 
@@ -2442,7 +2373,7 @@ state 94
     COLON           reduce using rule 58 (expr_log -> expr_log OR expr_rel .)
 
 
-state 95
+state 94
 
     (28) atrib -> ID ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -2460,7 +2391,7 @@ state 95
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 28 (atrib -> ID ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 28 (atrib -> ID ATRIB ID .)
@@ -2470,20 +2401,20 @@ state 95
     RPAREN          reduce using rule 28 (atrib -> ID ATRIB ID .)
     RBRACKET        reduce using rule 28 (atrib -> ID ATRIB ID .)
     COLON           reduce using rule 28 (atrib -> ID ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -2493,13 +2424,13 @@ state 95
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 96
+state 95
 
     (21) atrib -> ID ATRIB expr .
 
@@ -2509,7 +2440,7 @@ state 96
     COLON           reduce using rule 21 (atrib -> ID ATRIB expr .)
 
 
-state 97
+state 96
 
     (22) atrib -> ID PLUS ATRIB . expr
     (29) atrib -> ID PLUS ATRIB . ID
@@ -2551,19 +2482,18 @@ state 97
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 138
+    ID              shift and go to state 136
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -2572,7 +2502,7 @@ state 97
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 139
+    expr                           shift and go to state 137
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2582,7 +2512,7 @@ state 97
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 98
+state 97
 
     (23) atrib -> ID MINUS ATRIB . expr
     (30) atrib -> ID MINUS ATRIB . ID
@@ -2624,19 +2554,18 @@ state 98
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 140
+    ID              shift and go to state 138
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -2645,7 +2574,7 @@ state 98
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 141
+    expr                           shift and go to state 139
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2655,7 +2584,7 @@ state 98
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 99
+state 98
 
     (24) atrib -> ID TIMES ATRIB . expr
     (31) atrib -> ID TIMES ATRIB . ID
@@ -2697,19 +2626,18 @@ state 99
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 142
+    ID              shift and go to state 140
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -2718,7 +2646,7 @@ state 99
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 143
+    expr                           shift and go to state 141
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2728,7 +2656,7 @@ state 99
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 100
+state 99
 
     (25) atrib -> ID DIVIDE ATRIB . expr
     (32) atrib -> ID DIVIDE ATRIB . ID
@@ -2770,19 +2698,18 @@ state 100
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 144
+    ID              shift and go to state 142
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -2791,7 +2718,7 @@ state 100
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 145
+    expr                           shift and go to state 143
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2801,7 +2728,7 @@ state 100
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 101
+state 100
 
     (26) atrib -> ID PERCENT ATRIB . expr
     (33) atrib -> ID PERCENT ATRIB . ID
@@ -2843,19 +2770,18 @@ state 101
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 146
+    ID              shift and go to state 144
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -2864,7 +2790,7 @@ state 101
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 147
+    expr                           shift and go to state 145
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2874,7 +2800,7 @@ state 101
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 102
+state 101
 
     (27) atrib -> ID AND ATRIB . expr
     (34) atrib -> ID AND ATRIB . ID
@@ -2916,19 +2842,18 @@ state 102
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    ID              shift and go to state 148
+    ID              shift and go to state 146
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
@@ -2937,7 +2862,7 @@ state 102
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 149
+    expr                           shift and go to state 147
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -2947,14 +2872,14 @@ state 102
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 103
+state 102
 
     (35) atrib -> ID OR ATRIB . ID
 
-    ID              shift and go to state 150
+    ID              shift and go to state 148
 
 
-state 104
+state 103
 
     (76) expr_un -> PLUS PLUS expr_postfix .
 
@@ -2975,60 +2900,7 @@ state 104
     COLON           reduce using rule 76 (expr_un -> PLUS PLUS expr_postfix .)
 
 
-state 105
-
-    (77) expr_un -> MINUS MINUS expr_postfix .
-    (74) expr_un -> expr_postfix .
-
-  ! reduce/reduce conflict for TIMES resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for DIVIDE resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for PERCENT resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for GREATER resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for LESS resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for NOT resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for ATRIB resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for PLUS resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for MINUS resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for AND resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for OR resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for SEMICOLON resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for RPAREN resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for RBRACKET resolved using rule 74 (expr_un -> expr_postfix .)
-  ! reduce/reduce conflict for COLON resolved using rule 74 (expr_un -> expr_postfix .)
-    TIMES           reduce using rule 74 (expr_un -> expr_postfix .)
-    DIVIDE          reduce using rule 74 (expr_un -> expr_postfix .)
-    PERCENT         reduce using rule 74 (expr_un -> expr_postfix .)
-    GREATER         reduce using rule 74 (expr_un -> expr_postfix .)
-    LESS            reduce using rule 74 (expr_un -> expr_postfix .)
-    NOT             reduce using rule 74 (expr_un -> expr_postfix .)
-    ATRIB           reduce using rule 74 (expr_un -> expr_postfix .)
-    PLUS            reduce using rule 74 (expr_un -> expr_postfix .)
-    MINUS           reduce using rule 74 (expr_un -> expr_postfix .)
-    AND             reduce using rule 74 (expr_un -> expr_postfix .)
-    OR              reduce using rule 74 (expr_un -> expr_postfix .)
-    SEMICOLON       reduce using rule 74 (expr_un -> expr_postfix .)
-    RPAREN          reduce using rule 74 (expr_un -> expr_postfix .)
-    RBRACKET        reduce using rule 74 (expr_un -> expr_postfix .)
-    COLON           reduce using rule 74 (expr_un -> expr_postfix .)
-
-  ! TIMES           [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! DIVIDE          [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! PERCENT         [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! GREATER         [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! LESS            [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! NOT             [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! ATRIB           [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! PLUS            [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! MINUS           [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! AND             [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! OR              [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! SEMICOLON       [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! RPAREN          [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! RBRACKET        [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-  ! COLON           [ reduce using rule 77 (expr_un -> MINUS MINUS expr_postfix .) ]
-
-
-state 106
+state 104
 
     (61) expr_rel -> expr_ar GREATER expr_ar .
     (68) expr_ar -> expr_ar . PLUS expr_mul
@@ -3040,11 +2912,11 @@ state 106
     RPAREN          reduce using rule 61 (expr_rel -> expr_ar GREATER expr_ar .)
     RBRACKET        reduce using rule 61 (expr_rel -> expr_ar GREATER expr_ar .)
     COLON           reduce using rule 61 (expr_rel -> expr_ar GREATER expr_ar .)
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
 
 
-state 107
+state 105
 
     (62) expr_rel -> expr_ar GREATER ATRIB . expr_ar
     (67) expr_ar -> . expr_mul
@@ -3057,33 +2929,32 @@ state 107
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_ar                        shift and go to state 151
+    expr_ar                        shift and go to state 149
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 108
+state 106
 
     (66) expr_rel -> expr_ar ATRIB ATRIB . expr_ar
     (67) expr_ar -> . expr_mul
@@ -3096,33 +2967,32 @@ state 108
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_ar                        shift and go to state 152
+    expr_ar                        shift and go to state 150
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 109
+state 107
 
     (63) expr_rel -> expr_ar LESS expr_ar .
     (68) expr_ar -> expr_ar . PLUS expr_mul
@@ -3134,11 +3004,11 @@ state 109
     RPAREN          reduce using rule 63 (expr_rel -> expr_ar LESS expr_ar .)
     RBRACKET        reduce using rule 63 (expr_rel -> expr_ar LESS expr_ar .)
     COLON           reduce using rule 63 (expr_rel -> expr_ar LESS expr_ar .)
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
 
 
-state 110
+state 108
 
     (64) expr_rel -> expr_ar LESS ATRIB . expr_ar
     (67) expr_ar -> . expr_mul
@@ -3151,33 +3021,32 @@ state 110
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_ar                        shift and go to state 153
+    expr_ar                        shift and go to state 151
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 111
+state 109
 
     (65) expr_rel -> expr_ar NOT ATRIB . expr_ar
     (67) expr_ar -> . expr_mul
@@ -3190,33 +3059,32 @@ state 111
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     MINUS           shift and go to state 34
     PLUS            shift and go to state 33
-    ID              shift and go to state 68
+    ID              shift and go to state 67
     NUM_INT         shift and go to state 43
     NUM_DEC         shift and go to state 44
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr_ar                        shift and go to state 154
+    expr_ar                        shift and go to state 152
     expr_mul                       shift and go to state 38
     expr_un                        shift and go to state 39
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 112
+state 110
 
     (68) expr_ar -> expr_ar PLUS expr_mul .
     (71) expr_mul -> expr_mul . TIMES expr_un
@@ -3235,12 +3103,12 @@ state 112
     RPAREN          reduce using rule 68 (expr_ar -> expr_ar PLUS expr_mul .)
     RBRACKET        reduce using rule 68 (expr_ar -> expr_ar PLUS expr_mul .)
     COLON           reduce using rule 68 (expr_ar -> expr_ar PLUS expr_mul .)
-    TIMES           shift and go to state 76
-    DIVIDE          shift and go to state 77
-    PERCENT         shift and go to state 78
+    TIMES           shift and go to state 75
+    DIVIDE          shift and go to state 76
+    PERCENT         shift and go to state 77
 
 
-state 113
+state 111
 
     (69) expr_ar -> expr_ar MINUS expr_mul .
     (71) expr_mul -> expr_mul . TIMES expr_un
@@ -3259,12 +3127,12 @@ state 113
     RPAREN          reduce using rule 69 (expr_ar -> expr_ar MINUS expr_mul .)
     RBRACKET        reduce using rule 69 (expr_ar -> expr_ar MINUS expr_mul .)
     COLON           reduce using rule 69 (expr_ar -> expr_ar MINUS expr_mul .)
-    TIMES           shift and go to state 76
-    DIVIDE          shift and go to state 77
-    PERCENT         shift and go to state 78
+    TIMES           shift and go to state 75
+    DIVIDE          shift and go to state 76
+    PERCENT         shift and go to state 77
 
 
-state 114
+state 112
 
     (71) expr_mul -> expr_mul TIMES expr_un .
 
@@ -3285,7 +3153,7 @@ state 114
     COLON           reduce using rule 71 (expr_mul -> expr_mul TIMES expr_un .)
 
 
-state 115
+state 113
 
     (72) expr_mul -> expr_mul DIVIDE expr_un .
 
@@ -3306,7 +3174,7 @@ state 115
     COLON           reduce using rule 72 (expr_mul -> expr_mul DIVIDE expr_un .)
 
 
-state 116
+state 114
 
     (73) expr_mul -> expr_mul PERCENT expr_un .
 
@@ -3327,80 +3195,80 @@ state 116
     COLON           reduce using rule 73 (expr_mul -> expr_mul PERCENT expr_un .)
 
 
+state 115
+
+    (78) expr_postfix -> primary LBRACKET expr . RBRACKET
+
+    RBRACKET        shift and go to state 153
+
+
+state 116
+
+    (79) expr_postfix -> primary LPAREN args . RPAREN
+
+    RPAREN          shift and go to state 154
+
+
 state 117
 
-    (79) expr_postfix -> primary LBRACKET expr . RBRACKET
+    (82) args -> expr .
 
-    RBRACKET        shift and go to state 155
+    RPAREN          reduce using rule 82 (args -> expr .)
 
 
 state 118
 
-    (80) expr_postfix -> primary LPAREN args . RPAREN
+    (80) expr_postfix -> primary DOT ID .
 
-    RPAREN          shift and go to state 156
+    TIMES           reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    DIVIDE          reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    PERCENT         reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    GREATER         reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    LESS            reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    NOT             reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    ATRIB           reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    PLUS            reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    MINUS           reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    AND             reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    OR              reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    SEMICOLON       reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    RPAREN          reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    RBRACKET        reduce using rule 80 (expr_postfix -> primary DOT ID .)
+    COLON           reduce using rule 80 (expr_postfix -> primary DOT ID .)
 
 
 state 119
 
-    (83) args -> expr .
+    (81) expr_postfix -> primary MINUS GREATER . ID
 
-    RPAREN          reduce using rule 83 (args -> expr .)
+    ID              shift and go to state 155
 
 
 state 120
 
-    (81) expr_postfix -> primary DOT ID .
+    (88) primary -> LPAREN expr RPAREN .
 
-    TIMES           reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    DIVIDE          reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    PERCENT         reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    GREATER         reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    LESS            reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    NOT             reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    ATRIB           reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    PLUS            reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    MINUS           reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    AND             reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    OR              reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    SEMICOLON       reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    RPAREN          reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    RBRACKET        reduce using rule 81 (expr_postfix -> primary DOT ID .)
-    COLON           reduce using rule 81 (expr_postfix -> primary DOT ID .)
+    LBRACKET        reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    LPAREN          reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    DOT             reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    MINUS           reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    TIMES           reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    DIVIDE          reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    PERCENT         reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    GREATER         reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    LESS            reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    NOT             reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    ATRIB           reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    PLUS            reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    AND             reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    OR              reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    SEMICOLON       reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    RPAREN          reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    RBRACKET        reduce using rule 88 (primary -> LPAREN expr RPAREN .)
+    COLON           reduce using rule 88 (primary -> LPAREN expr RPAREN .)
 
 
 state 121
-
-    (82) expr_postfix -> primary MINUS GREATER . ID
-
-    ID              shift and go to state 157
-
-
-state 122
-
-    (89) primary -> LPAREN expr RPAREN .
-
-    LBRACKET        reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    LPAREN          reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    DOT             reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    MINUS           reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    TIMES           reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    DIVIDE          reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    PERCENT         reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    GREATER         reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    LESS            reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    NOT             reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    ATRIB           reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    PLUS            reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    AND             reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    OR              reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    SEMICOLON       reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    RPAREN          reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    RBRACKET        reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-    COLON           reduce using rule 89 (primary -> LPAREN expr RPAREN .)
-
-
-state 123
 
     (8) dvar -> tipo ID ATRIB expr SEMICOLON .
 
@@ -3420,7 +3288,7 @@ state 123
     RBRACE          reduce using rule 8 (dvar -> tipo ID ATRIB expr SEMICOLON .)
 
 
-state 124
+state 122
 
     (16) param -> tipo ID .
     (53) array -> ID . LBRACKET expr RBRACKET
@@ -3428,10 +3296,10 @@ state 124
 
     COMMA           reduce using rule 16 (param -> tipo ID .)
     RPAREN          reduce using rule 16 (param -> tipo ID .)
-    LBRACKET        shift and go to state 158
+    LBRACKET        shift and go to state 156
 
 
-state 125
+state 123
 
     (17) param -> tipo array .
 
@@ -3439,23 +3307,23 @@ state 125
     RPAREN          reduce using rule 17 (param -> tipo array .)
 
 
-state 126
+state 124
 
     (18) param -> tipo DOT . DOT DOT ID
 
-    DOT             shift and go to state 159
+    DOT             shift and go to state 157
 
 
-state 127
+state 125
 
     (13) dfunc -> tipo ID LPAREN parametros RPAREN . bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 160
+    bloco                          shift and go to state 158
 
-state 128
+state 126
 
     (15) parametros -> param COMMA . parametros
     (14) parametros -> . param
@@ -3473,18 +3341,18 @@ state 128
     CHAR            shift and go to state 12
     BOOLEAN         shift and go to state 13
 
-    param                          shift and go to state 87
-    parametros                     shift and go to state 161
-    tipo                           shift and go to state 85
+    param                          shift and go to state 86
+    parametros                     shift and go to state 159
+    tipo                           shift and go to state 84
 
-state 129
+state 127
 
     (49) destr -> STRUCT ID LBRACE dvar_star RBRACE . SEMICOLON
 
-    SEMICOLON       shift and go to state 162
+    SEMICOLON       shift and go to state 160
 
 
-state 130
+state 128
 
     (52) dvar_star -> dvar_star dvar .
 
@@ -3495,15 +3363,15 @@ state 130
     BOOLEAN         reduce using rule 52 (dvar_star -> dvar_star dvar .)
 
 
-state 131
+state 129
 
     (7) dvar -> tipo . ID SEMICOLON
     (8) dvar -> tipo . ID ATRIB expr SEMICOLON
 
-    ID              shift and go to state 163
+    ID              shift and go to state 161
 
 
-state 132
+state 130
 
     (36) control -> IF LPAREN expr RPAREN bloco .
     (37) control -> IF LPAREN expr RPAREN bloco . ELSE bloco
@@ -3522,10 +3390,10 @@ state 132
     RETURN          reduce using rule 36 (control -> IF LPAREN expr RPAREN bloco .)
     $end            reduce using rule 36 (control -> IF LPAREN expr RPAREN bloco .)
     RBRACE          reduce using rule 36 (control -> IF LPAREN expr RPAREN bloco .)
-    ELSE            shift and go to state 164
+    ELSE            shift and go to state 162
 
 
-state 133
+state 131
 
     (19) bloco -> LBRACE . dec RBRACE
     (4) dec -> . dvar
@@ -3562,14 +3430,14 @@ state 133
     CONTINUE        shift and go to state 19
     RETURN          shift and go to state 20
 
-    dec                            shift and go to state 165
+    dec                            shift and go to state 163
     dvar                           shift and go to state 4
     dfunc                          shift and go to state 5
     destr                          shift and go to state 6
     tipo                           shift and go to state 7
     control                        shift and go to state 9
 
-state 134
+state 132
 
     (38) control -> WHILE LPAREN expr RPAREN bloco .
 
@@ -3589,14 +3457,14 @@ state 134
     RBRACE          reduce using rule 38 (control -> WHILE LPAREN expr RPAREN bloco .)
 
 
-state 135
+state 133
 
     (39) control -> FOR LPAREN expr SEMICOLON expr . SEMICOLON RPAREN bloco
 
-    SEMICOLON       shift and go to state 166
+    SEMICOLON       shift and go to state 164
 
 
-state 136
+state 134
 
     (40) control -> SWITCH LPAREN expr RPAREN caselista .
 
@@ -3616,7 +3484,7 @@ state 136
     RBRACE          reduce using rule 40 (control -> SWITCH LPAREN expr RPAREN caselista .)
 
 
-state 137
+state 135
 
     (41) caselista -> casedec_star .
     (43) casedec_star -> casedec_star . casedec
@@ -3637,12 +3505,12 @@ state 137
     RETURN          reduce using rule 41 (caselista -> casedec_star .)
     $end            reduce using rule 41 (caselista -> casedec_star .)
     RBRACE          reduce using rule 41 (caselista -> casedec_star .)
-    CASE            shift and go to state 168
-    DEFAULT         shift and go to state 169
+    CASE            shift and go to state 166
+    DEFAULT         shift and go to state 167
 
-    casedec                        shift and go to state 167
+    casedec                        shift and go to state 165
 
-state 138
+state 136
 
     (29) atrib -> ID PLUS ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -3660,7 +3528,7 @@ state 138
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 29 (atrib -> ID PLUS ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 29 (atrib -> ID PLUS ATRIB ID .)
@@ -3670,20 +3538,20 @@ state 138
     RPAREN          reduce using rule 29 (atrib -> ID PLUS ATRIB ID .)
     RBRACKET        reduce using rule 29 (atrib -> ID PLUS ATRIB ID .)
     COLON           reduce using rule 29 (atrib -> ID PLUS ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -3693,13 +3561,13 @@ state 138
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 139
+state 137
 
     (22) atrib -> ID PLUS ATRIB expr .
 
@@ -3709,7 +3577,7 @@ state 139
     COLON           reduce using rule 22 (atrib -> ID PLUS ATRIB expr .)
 
 
-state 140
+state 138
 
     (30) atrib -> ID MINUS ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -3727,7 +3595,7 @@ state 140
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 30 (atrib -> ID MINUS ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 30 (atrib -> ID MINUS ATRIB ID .)
@@ -3737,20 +3605,20 @@ state 140
     RPAREN          reduce using rule 30 (atrib -> ID MINUS ATRIB ID .)
     RBRACKET        reduce using rule 30 (atrib -> ID MINUS ATRIB ID .)
     COLON           reduce using rule 30 (atrib -> ID MINUS ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -3760,13 +3628,13 @@ state 140
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 141
+state 139
 
     (23) atrib -> ID MINUS ATRIB expr .
 
@@ -3776,7 +3644,7 @@ state 141
     COLON           reduce using rule 23 (atrib -> ID MINUS ATRIB expr .)
 
 
-state 142
+state 140
 
     (31) atrib -> ID TIMES ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -3794,7 +3662,7 @@ state 142
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 31 (atrib -> ID TIMES ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 31 (atrib -> ID TIMES ATRIB ID .)
@@ -3804,20 +3672,20 @@ state 142
     RPAREN          reduce using rule 31 (atrib -> ID TIMES ATRIB ID .)
     RBRACKET        reduce using rule 31 (atrib -> ID TIMES ATRIB ID .)
     COLON           reduce using rule 31 (atrib -> ID TIMES ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -3827,13 +3695,13 @@ state 142
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 143
+state 141
 
     (24) atrib -> ID TIMES ATRIB expr .
 
@@ -3843,7 +3711,7 @@ state 143
     COLON           reduce using rule 24 (atrib -> ID TIMES ATRIB expr .)
 
 
-state 144
+state 142
 
     (32) atrib -> ID DIVIDE ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -3861,7 +3729,7 @@ state 144
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 32 (atrib -> ID DIVIDE ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 32 (atrib -> ID DIVIDE ATRIB ID .)
@@ -3871,20 +3739,20 @@ state 144
     RPAREN          reduce using rule 32 (atrib -> ID DIVIDE ATRIB ID .)
     RBRACKET        reduce using rule 32 (atrib -> ID DIVIDE ATRIB ID .)
     COLON           reduce using rule 32 (atrib -> ID DIVIDE ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -3894,13 +3762,13 @@ state 144
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 145
+state 143
 
     (25) atrib -> ID DIVIDE ATRIB expr .
 
@@ -3910,7 +3778,7 @@ state 145
     COLON           reduce using rule 25 (atrib -> ID DIVIDE ATRIB expr .)
 
 
-state 146
+state 144
 
     (33) atrib -> ID PERCENT ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -3928,7 +3796,7 @@ state 146
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 33 (atrib -> ID PERCENT ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 33 (atrib -> ID PERCENT ATRIB ID .)
@@ -3938,20 +3806,20 @@ state 146
     RPAREN          reduce using rule 33 (atrib -> ID PERCENT ATRIB ID .)
     RBRACKET        reduce using rule 33 (atrib -> ID PERCENT ATRIB ID .)
     COLON           reduce using rule 33 (atrib -> ID PERCENT ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -3961,13 +3829,13 @@ state 146
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 147
+state 145
 
     (26) atrib -> ID PERCENT ATRIB expr .
 
@@ -3977,7 +3845,7 @@ state 147
     COLON           reduce using rule 26 (atrib -> ID PERCENT ATRIB expr .)
 
 
-state 148
+state 146
 
     (34) atrib -> ID AND ATRIB ID .
     (21) atrib -> ID . ATRIB expr
@@ -3995,7 +3863,7 @@ state 148
     (33) atrib -> ID . PERCENT ATRIB ID
     (34) atrib -> ID . AND ATRIB ID
     (35) atrib -> ID . OR ATRIB ID
-    (85) primary -> ID .
+    (84) primary -> ID .
 
   ! reduce/reduce conflict for SEMICOLON resolved using rule 34 (atrib -> ID AND ATRIB ID .)
   ! reduce/reduce conflict for RPAREN resolved using rule 34 (atrib -> ID AND ATRIB ID .)
@@ -4005,20 +3873,20 @@ state 148
     RPAREN          reduce using rule 34 (atrib -> ID AND ATRIB ID .)
     RBRACKET        reduce using rule 34 (atrib -> ID AND ATRIB ID .)
     COLON           reduce using rule 34 (atrib -> ID AND ATRIB ID .)
-    LBRACKET        reduce using rule 85 (primary -> ID .)
-    LPAREN          reduce using rule 85 (primary -> ID .)
-    DOT             reduce using rule 85 (primary -> ID .)
-    MINUS           reduce using rule 85 (primary -> ID .)
-    TIMES           reduce using rule 85 (primary -> ID .)
-    DIVIDE          reduce using rule 85 (primary -> ID .)
-    PERCENT         reduce using rule 85 (primary -> ID .)
-    GREATER         reduce using rule 85 (primary -> ID .)
-    LESS            reduce using rule 85 (primary -> ID .)
-    NOT             reduce using rule 85 (primary -> ID .)
-    ATRIB           reduce using rule 85 (primary -> ID .)
-    PLUS            reduce using rule 85 (primary -> ID .)
-    AND             reduce using rule 85 (primary -> ID .)
-    OR              reduce using rule 85 (primary -> ID .)
+    LBRACKET        reduce using rule 84 (primary -> ID .)
+    LPAREN          reduce using rule 84 (primary -> ID .)
+    DOT             reduce using rule 84 (primary -> ID .)
+    MINUS           reduce using rule 84 (primary -> ID .)
+    TIMES           reduce using rule 84 (primary -> ID .)
+    DIVIDE          reduce using rule 84 (primary -> ID .)
+    PERCENT         reduce using rule 84 (primary -> ID .)
+    GREATER         reduce using rule 84 (primary -> ID .)
+    LESS            reduce using rule 84 (primary -> ID .)
+    NOT             reduce using rule 84 (primary -> ID .)
+    ATRIB           reduce using rule 84 (primary -> ID .)
+    PLUS            reduce using rule 84 (primary -> ID .)
+    AND             reduce using rule 84 (primary -> ID .)
+    OR              reduce using rule 84 (primary -> ID .)
 
   ! ATRIB           [ shift and go to state 57 ]
   ! PLUS            [ shift and go to state 58 ]
@@ -4028,13 +3896,13 @@ state 148
   ! PERCENT         [ shift and go to state 62 ]
   ! AND             [ shift and go to state 63 ]
   ! OR              [ shift and go to state 64 ]
-  ! SEMICOLON       [ reduce using rule 85 (primary -> ID .) ]
-  ! RPAREN          [ reduce using rule 85 (primary -> ID .) ]
-  ! RBRACKET        [ reduce using rule 85 (primary -> ID .) ]
-  ! COLON           [ reduce using rule 85 (primary -> ID .) ]
+  ! SEMICOLON       [ reduce using rule 84 (primary -> ID .) ]
+  ! RPAREN          [ reduce using rule 84 (primary -> ID .) ]
+  ! RBRACKET        [ reduce using rule 84 (primary -> ID .) ]
+  ! COLON           [ reduce using rule 84 (primary -> ID .) ]
 
 
-state 149
+state 147
 
     (27) atrib -> ID AND ATRIB expr .
 
@@ -4044,7 +3912,7 @@ state 149
     COLON           reduce using rule 27 (atrib -> ID AND ATRIB expr .)
 
 
-state 150
+state 148
 
     (35) atrib -> ID OR ATRIB ID .
 
@@ -4054,7 +3922,7 @@ state 150
     COLON           reduce using rule 35 (atrib -> ID OR ATRIB ID .)
 
 
-state 151
+state 149
 
     (62) expr_rel -> expr_ar GREATER ATRIB expr_ar .
     (68) expr_ar -> expr_ar . PLUS expr_mul
@@ -4066,11 +3934,11 @@ state 151
     RPAREN          reduce using rule 62 (expr_rel -> expr_ar GREATER ATRIB expr_ar .)
     RBRACKET        reduce using rule 62 (expr_rel -> expr_ar GREATER ATRIB expr_ar .)
     COLON           reduce using rule 62 (expr_rel -> expr_ar GREATER ATRIB expr_ar .)
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
 
 
-state 152
+state 150
 
     (66) expr_rel -> expr_ar ATRIB ATRIB expr_ar .
     (68) expr_ar -> expr_ar . PLUS expr_mul
@@ -4082,11 +3950,11 @@ state 152
     RPAREN          reduce using rule 66 (expr_rel -> expr_ar ATRIB ATRIB expr_ar .)
     RBRACKET        reduce using rule 66 (expr_rel -> expr_ar ATRIB ATRIB expr_ar .)
     COLON           reduce using rule 66 (expr_rel -> expr_ar ATRIB ATRIB expr_ar .)
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
 
 
-state 153
+state 151
 
     (64) expr_rel -> expr_ar LESS ATRIB expr_ar .
     (68) expr_ar -> expr_ar . PLUS expr_mul
@@ -4098,11 +3966,11 @@ state 153
     RPAREN          reduce using rule 64 (expr_rel -> expr_ar LESS ATRIB expr_ar .)
     RBRACKET        reduce using rule 64 (expr_rel -> expr_ar LESS ATRIB expr_ar .)
     COLON           reduce using rule 64 (expr_rel -> expr_ar LESS ATRIB expr_ar .)
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
 
 
-state 154
+state 152
 
     (65) expr_rel -> expr_ar NOT ATRIB expr_ar .
     (68) expr_ar -> expr_ar . PLUS expr_mul
@@ -4114,74 +3982,74 @@ state 154
     RPAREN          reduce using rule 65 (expr_rel -> expr_ar NOT ATRIB expr_ar .)
     RBRACKET        reduce using rule 65 (expr_rel -> expr_ar NOT ATRIB expr_ar .)
     COLON           reduce using rule 65 (expr_rel -> expr_ar NOT ATRIB expr_ar .)
-    PLUS            shift and go to state 74
-    MINUS           shift and go to state 75
+    PLUS            shift and go to state 73
+    MINUS           shift and go to state 74
+
+
+state 153
+
+    (78) expr_postfix -> primary LBRACKET expr RBRACKET .
+
+    TIMES           reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    DIVIDE          reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    PERCENT         reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    GREATER         reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    LESS            reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    NOT             reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    ATRIB           reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    PLUS            reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    MINUS           reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    AND             reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    OR              reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    SEMICOLON       reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    RPAREN          reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    RBRACKET        reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    COLON           reduce using rule 78 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+
+
+state 154
+
+    (79) expr_postfix -> primary LPAREN args RPAREN .
+
+    TIMES           reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    DIVIDE          reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    PERCENT         reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    GREATER         reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    LESS            reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    NOT             reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    ATRIB           reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    PLUS            reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    MINUS           reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    AND             reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    OR              reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    SEMICOLON       reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    RPAREN          reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    RBRACKET        reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
+    COLON           reduce using rule 79 (expr_postfix -> primary LPAREN args RPAREN .)
 
 
 state 155
 
-    (79) expr_postfix -> primary LBRACKET expr RBRACKET .
+    (81) expr_postfix -> primary MINUS GREATER ID .
 
-    TIMES           reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    DIVIDE          reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    PERCENT         reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    GREATER         reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    LESS            reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    NOT             reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    ATRIB           reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    PLUS            reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    MINUS           reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    AND             reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    OR              reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    SEMICOLON       reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    RPAREN          reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    RBRACKET        reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
-    COLON           reduce using rule 79 (expr_postfix -> primary LBRACKET expr RBRACKET .)
+    TIMES           reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    DIVIDE          reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    PERCENT         reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    GREATER         reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    LESS            reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    NOT             reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    ATRIB           reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    PLUS            reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    MINUS           reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    AND             reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    OR              reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    SEMICOLON       reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    RPAREN          reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    RBRACKET        reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
+    COLON           reduce using rule 81 (expr_postfix -> primary MINUS GREATER ID .)
 
 
 state 156
-
-    (80) expr_postfix -> primary LPAREN args RPAREN .
-
-    TIMES           reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    DIVIDE          reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    PERCENT         reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    GREATER         reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    LESS            reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    NOT             reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    ATRIB           reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    PLUS            reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    MINUS           reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    AND             reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    OR              reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    SEMICOLON       reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    RPAREN          reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    RBRACKET        reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-    COLON           reduce using rule 80 (expr_postfix -> primary LPAREN args RPAREN .)
-
-
-state 157
-
-    (82) expr_postfix -> primary MINUS GREATER ID .
-
-    TIMES           reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    DIVIDE          reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    PERCENT         reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    GREATER         reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    LESS            reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    NOT             reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    ATRIB           reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    PLUS            reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    MINUS           reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    AND             reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    OR              reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    SEMICOLON       reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    RPAREN          reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    RBRACKET        reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-    COLON           reduce using rule 82 (expr_postfix -> primary MINUS GREATER ID .)
-
-
-state 158
 
     (53) array -> ID LBRACKET . expr RBRACKET
     (54) array -> ID LBRACKET . RBRACKET
@@ -4223,19 +4091,18 @@ state 158
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
-    RBRACKET        shift and go to state 171
+    RBRACKET        shift and go to state 169
     ID              shift and go to state 32
     NOT             shift and go to state 36
     MINUS           shift and go to state 34
@@ -4245,7 +4112,7 @@ state 158
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 170
+    expr                           shift and go to state 168
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -4255,14 +4122,14 @@ state 158
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 159
+state 157
 
     (18) param -> tipo DOT DOT . DOT ID
 
-    DOT             shift and go to state 172
+    DOT             shift and go to state 170
 
 
-state 160
+state 158
 
     (13) dfunc -> tipo ID LPAREN parametros RPAREN bloco .
 
@@ -4282,14 +4149,14 @@ state 160
     RBRACE          reduce using rule 13 (dfunc -> tipo ID LPAREN parametros RPAREN bloco .)
 
 
-state 161
+state 159
 
     (15) parametros -> param COMMA parametros .
 
     RPAREN          reduce using rule 15 (parametros -> param COMMA parametros .)
 
 
-state 162
+state 160
 
     (49) destr -> STRUCT ID LBRACE dvar_star RBRACE SEMICOLON .
 
@@ -4309,7 +4176,7 @@ state 162
     RBRACE          reduce using rule 49 (destr -> STRUCT ID LBRACE dvar_star RBRACE SEMICOLON .)
 
 
-state 163
+state 161
 
     (7) dvar -> tipo ID . SEMICOLON
     (8) dvar -> tipo ID . ATRIB expr SEMICOLON
@@ -4318,30 +4185,30 @@ state 163
     ATRIB           shift and go to state 47
 
 
-state 164
+state 162
 
     (37) control -> IF LPAREN expr RPAREN bloco ELSE . bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 173
+    bloco                          shift and go to state 171
 
-state 165
+state 163
 
     (19) bloco -> LBRACE dec . RBRACE
 
-    RBRACE          shift and go to state 174
+    RBRACE          shift and go to state 172
 
 
-state 166
+state 164
 
     (39) control -> FOR LPAREN expr SEMICOLON expr SEMICOLON . RPAREN bloco
 
-    RPAREN          shift and go to state 175
+    RPAREN          shift and go to state 173
 
 
-state 167
+state 165
 
     (43) casedec_star -> casedec_star casedec .
 
@@ -4363,7 +4230,7 @@ state 167
     RBRACE          reduce using rule 43 (casedec_star -> casedec_star casedec .)
 
 
-state 168
+state 166
 
     (44) casedec -> CASE . expr COLON bloco
     (20) expr -> . atrib
@@ -4404,17 +4271,16 @@ state 168
     (74) expr_un -> . expr_postfix
     (75) expr_un -> . MINUS expr_un
     (76) expr_un -> . PLUS PLUS expr_postfix
-    (77) expr_un -> . MINUS MINUS expr_postfix
-    (78) expr_postfix -> . primary
-    (79) expr_postfix -> . primary LBRACKET expr RBRACKET
-    (80) expr_postfix -> . primary LPAREN args RPAREN
-    (81) expr_postfix -> . primary DOT ID
-    (82) expr_postfix -> . primary MINUS GREATER ID
-    (85) primary -> . ID
-    (86) primary -> . NUM_INT
-    (87) primary -> . NUM_DEC
-    (88) primary -> . TEXTO
-    (89) primary -> . LPAREN expr RPAREN
+    (77) expr_postfix -> . primary
+    (78) expr_postfix -> . primary LBRACKET expr RBRACKET
+    (79) expr_postfix -> . primary LPAREN args RPAREN
+    (80) expr_postfix -> . primary DOT ID
+    (81) expr_postfix -> . primary MINUS GREATER ID
+    (84) primary -> . ID
+    (85) primary -> . NUM_INT
+    (86) primary -> . NUM_DEC
+    (87) primary -> . TEXTO
+    (88) primary -> . LPAREN expr RPAREN
 
     ID              shift and go to state 32
     NOT             shift and go to state 36
@@ -4425,7 +4291,7 @@ state 168
     TEXTO           shift and go to state 45
     LPAREN          shift and go to state 42
 
-    expr                           shift and go to state 176
+    expr                           shift and go to state 174
     atrib                          shift and go to state 30
     expr_log                       shift and go to state 31
     expr_rel                       shift and go to state 35
@@ -4435,21 +4301,21 @@ state 168
     expr_postfix                   shift and go to state 40
     primary                        shift and go to state 41
 
-state 169
+state 167
 
     (45) casedec -> DEFAULT . COLON bloco
 
-    COLON           shift and go to state 177
+    COLON           shift and go to state 175
 
 
-state 170
+state 168
 
     (53) array -> ID LBRACKET expr . RBRACKET
 
-    RBRACKET        shift and go to state 178
+    RBRACKET        shift and go to state 176
 
 
-state 171
+state 169
 
     (54) array -> ID LBRACKET RBRACKET .
 
@@ -4457,14 +4323,14 @@ state 171
     RPAREN          reduce using rule 54 (array -> ID LBRACKET RBRACKET .)
 
 
-state 172
+state 170
 
     (18) param -> tipo DOT DOT DOT . ID
 
-    ID              shift and go to state 179
+    ID              shift and go to state 177
 
 
-state 173
+state 171
 
     (37) control -> IF LPAREN expr RPAREN bloco ELSE bloco .
 
@@ -4484,7 +4350,7 @@ state 173
     RBRACE          reduce using rule 37 (control -> IF LPAREN expr RPAREN bloco ELSE bloco .)
 
 
-state 174
+state 172
 
     (19) bloco -> LBRACE dec RBRACE .
 
@@ -4507,32 +4373,32 @@ state 174
     DEFAULT         reduce using rule 19 (bloco -> LBRACE dec RBRACE .)
 
 
-state 175
+state 173
 
     (39) control -> FOR LPAREN expr SEMICOLON expr SEMICOLON RPAREN . bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 180
+    bloco                          shift and go to state 178
 
-state 176
+state 174
 
     (44) casedec -> CASE expr . COLON bloco
 
-    COLON           shift and go to state 181
+    COLON           shift and go to state 179
 
 
-state 177
+state 175
 
     (45) casedec -> DEFAULT COLON . bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 182
+    bloco                          shift and go to state 180
 
-state 178
+state 176
 
     (53) array -> ID LBRACKET expr RBRACKET .
 
@@ -4540,7 +4406,7 @@ state 178
     RPAREN          reduce using rule 53 (array -> ID LBRACKET expr RBRACKET .)
 
 
-state 179
+state 177
 
     (18) param -> tipo DOT DOT DOT ID .
 
@@ -4548,7 +4414,7 @@ state 179
     RPAREN          reduce using rule 18 (param -> tipo DOT DOT DOT ID .)
 
 
-state 180
+state 178
 
     (39) control -> FOR LPAREN expr SEMICOLON expr SEMICOLON RPAREN bloco .
 
@@ -4568,16 +4434,16 @@ state 180
     RBRACE          reduce using rule 39 (control -> FOR LPAREN expr SEMICOLON expr SEMICOLON RPAREN bloco .)
 
 
-state 181
+state 179
 
     (44) casedec -> CASE expr COLON . bloco
     (19) bloco -> . LBRACE dec RBRACE
 
-    LBRACE          shift and go to state 133
+    LBRACE          shift and go to state 131
 
-    bloco                          shift and go to state 183
+    bloco                          shift and go to state 181
 
-state 182
+state 180
 
     (45) casedec -> DEFAULT COLON bloco .
 
@@ -4599,7 +4465,7 @@ state 182
     RBRACE          reduce using rule 45 (casedec -> DEFAULT COLON bloco .)
 
 
-state 183
+state 181
 
     (44) casedec -> CASE expr COLON bloco .
 
@@ -4624,20 +4490,17 @@ WARNING:
 WARNING: Conflicts:
 WARNING: 
 WARNING: shift/reduce conflict for MINUS in state 41 resolved as shift
-WARNING: reduce/reduce conflict in state 95 resolved using rule (atrib -> ID ATRIB ID)
-WARNING: rejected rule (primary -> ID) in state 95
-WARNING: reduce/reduce conflict in state 105 resolved using rule (expr_un -> expr_postfix)
-WARNING: rejected rule (expr_un -> MINUS MINUS expr_postfix) in state 105
-WARNING: reduce/reduce conflict in state 138 resolved using rule (atrib -> ID PLUS ATRIB ID)
+WARNING: reduce/reduce conflict in state 94 resolved using rule (atrib -> ID ATRIB ID)
+WARNING: rejected rule (primary -> ID) in state 94
+WARNING: reduce/reduce conflict in state 136 resolved using rule (atrib -> ID PLUS ATRIB ID)
+WARNING: rejected rule (primary -> ID) in state 136
+WARNING: reduce/reduce conflict in state 138 resolved using rule (atrib -> ID MINUS ATRIB ID)
 WARNING: rejected rule (primary -> ID) in state 138
-WARNING: reduce/reduce conflict in state 140 resolved using rule (atrib -> ID MINUS ATRIB ID)
+WARNING: reduce/reduce conflict in state 140 resolved using rule (atrib -> ID TIMES ATRIB ID)
 WARNING: rejected rule (primary -> ID) in state 140
-WARNING: reduce/reduce conflict in state 142 resolved using rule (atrib -> ID TIMES ATRIB ID)
+WARNING: reduce/reduce conflict in state 142 resolved using rule (atrib -> ID DIVIDE ATRIB ID)
 WARNING: rejected rule (primary -> ID) in state 142
-WARNING: reduce/reduce conflict in state 144 resolved using rule (atrib -> ID DIVIDE ATRIB ID)
+WARNING: reduce/reduce conflict in state 144 resolved using rule (atrib -> ID PERCENT ATRIB ID)
 WARNING: rejected rule (primary -> ID) in state 144
-WARNING: reduce/reduce conflict in state 146 resolved using rule (atrib -> ID PERCENT ATRIB ID)
+WARNING: reduce/reduce conflict in state 146 resolved using rule (atrib -> ID AND ATRIB ID)
 WARNING: rejected rule (primary -> ID) in state 146
-WARNING: reduce/reduce conflict in state 148 resolved using rule (atrib -> ID AND ATRIB ID)
-WARNING: rejected rule (primary -> ID) in state 148
-WARNING: Rule (expr_un -> MINUS MINUS expr_postfix) is never reduced
