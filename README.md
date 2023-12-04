@@ -1,5 +1,5 @@
 # Compilers-Lexical-Analyzer
-A simple Lexical Analyzer for my Compilers course
+A simple Lexical Analyzer and Parser for my Compilers course
 
 It was built using PLY, a python implementation of the lex parsing tool.
 lex.py is taken from https://github.com/dabeaz/ply repository, as it doesn't support pip package. It is untouched from the original and downloaded on October 2nd, 2023.
