@@ -29,3 +29,6 @@ This assignment is in the file 'lexer.py' and uses 'lex.py'
 ## Second Assignment
 
 In this assignment, we were tasked to build a parser that reads tokens from the lexer using the base grammar found in the assignment notes. We're expected to resolve conflicts and raise syntax errors that may appear in the input.
+
+
+This assignment is in the file 'lexer-parser.py' and uses both 'lex.py' and yacc.py
