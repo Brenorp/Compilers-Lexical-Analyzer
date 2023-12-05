@@ -246,19 +246,19 @@ def p_atrib_expr(p):
 
 def p_atrib_plus_expr(p):
     'atrib : ID PLUS ATRIB expr %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] + p[2]
 
 def p_atrib_minus_expr(p):
     'atrib : ID MINUS ATRIB expr %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] - p[3]
 
 def p_atrib_times_expr(p):
     'atrib : ID TIMES ATRIB expr %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] * p[3]
 
 def p_atrib_slash_expr(p):
     'atrib : ID DIVIDE ATRIB expr %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] / p[3]
 
 def p_atrib_percent_expr(p):
     'atrib : ID PERCENT ATRIB expr %prec atrib'
@@ -273,19 +273,19 @@ def p_atrib_id(p):
 
 def p_atrib_plus_id(p):
     'atrib : ID PLUS ATRIB ID %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] + p[2]
 
 def p_atrib_minus_id(p):
     'atrib : ID MINUS ATRIB ID %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] - p[3]
 
 def p_atrib_times_id(p):
     'atrib : ID TIMES ATRIB ID %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] * p[3]
 
 def p_atrib_slash_id(p):
     'atrib : ID DIVIDE ATRIB ID %prec atrib'
-    p[0] = p[1]
+    p[0] = p[1] / p[3]
 
 def p_atrib_percent_id(p):
     'atrib : ID PERCENT ATRIB ID %prec atrib'
@@ -449,11 +449,11 @@ def p_expr_ar_expr_mul(p):
 
 def p_expr_ar_plus_expr_mul(p):
     'expr_ar : expr_ar PLUS expr_mul'
-    p[0] = p[1]
+    p[0] = p[1] + p[3]
 
 def p_expr_ar_minus_expr_mul(p):
     'expr_ar : expr_ar MINUS expr_mul'
-    p[0] = p[1]
+    p[0] = p[1] - p[3]
 
 def p_expr_mul_unary(p):
     'expr_mul : expr_un'
@@ -461,11 +461,11 @@ def p_expr_mul_unary(p):
 
 def p_expr_mul_times_unary(p):
     'expr_mul : expr_mul TIMES expr_un'
-    p[0] = p[1]
+    p[0] = p[1] * p[3]
 
 def p_expr_mul_divide_unary(p):
     'expr_mul : expr_mul DIVIDE expr_un'
-    p[0] = p[1]
+    p[0] = p[1] / p[3]
 
 def p_expr_mul_rest_unary(p):
     'expr_mul : expr_mul PERCENT expr_un'
@@ -477,15 +477,15 @@ def p_expr_un_postfix(p):
 
 def p_expr_un_minus(p):
     'expr_un : MINUS expr_un %prec uminus'
-    p[0] = p[1]
+    p[0] = - p[2]
 
 def p_expr_un_sub(p):
     'expr_un : PLUS PLUS expr_postfix'
-    p[0] = p[1]
+    p[0] = + + p[3]
 
 '''def p_expr_un_add(p):
     'expr_un : MINUS MINUS expr_postfix'
-    p[0] = p[1]'''
+    p[0] = - - p[3]'''
 
 def p_postfix_primary(p):
     'expr_postfix : primary'
@@ -505,7 +505,7 @@ def p_postfix_dot_id(p):
 
 def p_postfix_arrow(p):
     'expr_postfix : primary MINUS GREATER ID'
-    p[0] = p[1]
+    p[0] = p[1] - p[3]
 
 def p_args(p):
     'args : expr'
